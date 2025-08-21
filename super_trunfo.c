@@ -55,7 +55,7 @@
 
         printf("Densidade populacional: %.2f hab/km²\n", densidade);
 
-        float pibpercapita1 =  (pib1 * 1000000000) / pop1;
+        float pibpercapita1 =  pib1 / (float) pop1;
 
         printf("PIB per Capita: %.2f reais\n", pibpercapita1);
 
@@ -107,7 +107,7 @@
 
         printf("Densidade populacional: %.2f hab/km²\n", densidade2);
 
-        float pibpercapita2 =  (pib2 * 1000000000) / pop2;
+        float pibpercapita2 =  pib2 / (float) pop2;
 
         printf("PIB per Capita: %.2f reais\n", pibpercapita2);
         printf("--------------------------------\n");
