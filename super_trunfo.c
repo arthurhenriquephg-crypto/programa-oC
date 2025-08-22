@@ -1,6 +1,6 @@
 #include <stdio.h>  
     int main(){
-        char estado1, estado2;
+        char estado1[3], estado2[3];
         char codigo1[20], codigo2[20];
         char cidade1[20], cidade2 [20];
         int pop1, pop2;
@@ -12,7 +12,7 @@
 
 
         printf("Estado: ");
-        scanf("%s", &estado1);
+        scanf("%2s", estado1);
 
         printf("Codigo da carta: ");
         scanf("%s", &codigo1);
@@ -37,7 +37,7 @@
         printf("Carta 1 completa!\n");
         printf("------ CARTA 1 ------\n");
 
-        printf("Estado: %c\n", estado1);
+        printf("Estado: %s\n", estado1);
 
         printf("Codigo da carta: %s\n", codigo1);
 
@@ -59,12 +59,16 @@
 
         printf("PIB per Capita: %.2f reais\n", pibpercapita1);
 
+        float superpoder1 = (pop1 + (int)area1 + (int)pib1 + pont1 + (int)pibpercapita1);
+
+        printf("Super Poder: %.2f\n", superpoder1);
+
         printf("--------------------------------\n");
         //Cadastrando a carta 2
         printf("Carta 2: \n");
 
         printf("Estado: ");
-        scanf("%s", &estado2);
+        scanf("%2s", estado2);
 
         printf("Codigo da carta: ");
         scanf("%s", &codigo2);
@@ -89,7 +93,7 @@
         printf("Carta 2 completa!\n");
         printf("------ CARTA 2 ------\n");
 
-        printf("Estado: %c\n", estado2);
+        printf("Estado: %s\n", estado2);
 
         printf("Codigo da carta: %s\n", codigo2);
 
@@ -110,7 +114,45 @@
         float pibpercapita2 =  pib2 / (float) pop2;
 
         printf("PIB per Capita: %.2f reais\n", pibpercapita2);
+
+        float superpoder2 = (pop2 + (int)area2 + (int)pib2 + pont2 + (int)pibpercapita2);
+
+        printf("Super Poder: %.2f\n", superpoder2);
+
         printf("--------------------------------\n");
+
+        printf("--- RESULTADO ---\n");
+        
+        float resultadopop = pop1 > pop2;
+        
+        printf("A populacao da carta 1 (%i) eh maior do que a populacao da carta 2(%i)? %.0f\n", pop1, pop2, resultadopop);
+
+        float resultadoarea = area1 > area2;
+
+        printf("A area da carta 1(%.2f) eh maior do que a carta 2(%.2f)? %.0f\n", area1, area2, resultadoarea);
+
+        float resultadopib = pib1 > pib2;
+
+        printf("O PIB da carta 1 (%.2f) eh maior do que a carta2(%.2f)? %.0f\n", pib1, pib2, resultadopib);
+
+        float resultadoturistico = pont1 > pont2;
+
+        printf("Carta 1(%i) tem mais pontos turisticos do que a carta 2(%i)? %.0f\n", pont1, pont2, resultadoturistico);
+
+        float resultadodensidade = densidade < densidade2;
+
+        printf("Densidade da carta 1(%.2f) eh maior do que a carta 2(%.2f)? %.0f\n", densidade, densidade2, resultadodensidade);
+
+        float resultadopibcapita = pibpercapita1 > pibpercapita2;
+
+        printf("PIB per capita da carta 1(%.2f) eh maior do que o PIB per capita da carta 2(%.2f)? %.0f\n", pibpercapita1, pibpercapita2, resultadopibcapita);
+
+        float resultadosupoerpoder = superpoder1 > superpoder2;
+
+        printf("O super poder da carta 1(%.2f) eh maior do que a carta 2(%.2f)? %.0f\n", superpoder1, superpoder2, resultadosupoerpoder);
+
+
+
 
 
 
